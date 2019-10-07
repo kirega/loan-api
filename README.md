@@ -1,22 +1,25 @@
-#Loans API
+## Loans API
+
 This api is build using NodeJs , Express server and Postgres. As such make sure you have node and postgres 
 installed on your machine.
 
 Before
 To get this services started.
-#Clone the repository
+
+## Clone the repository
+
 `git clone git@github.com:kirega/loan-api.git`
 
 then
 
 `cd loan-api/`
 
-#Install dependencies
+## Install dependencies
  Run this command to install all dependencies
  
  `npm install`
 
-#Database preparations
+## Database preparations
 Before we can start working with this server we need to do a number of activities before
 we can it to work. First of all, we need to set up our postgres database.
 Assuming that you have a working version of postgres then lets run the following commands:
@@ -59,14 +62,17 @@ Simply run these commands from your `loans-api/` directory:
 What these commands do is that they create empty tables in the database.
 
 Now we start our server
-#start the server
+
+## start the server
+
 Now you can start your server.
 
 `npm run watch`
 
 Your server should be running on `http://localhost:5000`. You can edit this port from the `.env` file
 
-#Important final steps
+## Important final steps
+
 Our database is currently empty and we need to populate it will dummy records.
 I have set up some endpoints for creating this records. To execute them simply 
 make `GET` requests to the following endpoints either from your browser or a web
