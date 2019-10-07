@@ -20,7 +20,8 @@ const sql = (query) => {
       console.log(err);
       pool.end();
     });
-}
+};
+
 const createLoansTable = () => {
   const loans_schedule =
     `
@@ -28,60 +29,84 @@ const createLoansTable = () => {
         loans_schedule(
             id SERIAL PRIMARY KEY,
             farmer INT NOT NULL,
+            officer INT NOT NULL,
             loan_amount INT NOT NULL,
             loan_paid INT NOT NULL,
             amount_due INT NOT NULL,
             due_date DATE NOT NULL,
             amount_paid INT NOT NULL,
             date_paid DATE NOT NULL,
-            overdue INT NOT NULL,
+            overdue INT NOT NULL DEFAULT 0
         )
     `;
 
   sql(loans_schedule);
 
-}
+};
+
 const createLoansOfficerTable = () => {
-  const loans_schedule =
+  const loans_officer =
     `
     CREATE TABLE IF NOT EXISTS 
-    loans_schedule(
+    loans_officer(
         id SERIAL PRIMARY KEY,
-        farmer INT NOT NULL,
-        loan_amount INT NOT NULL,
-        loan_paid INT NOT NULL,
-        amount_due INT NOT NULL,
-        due_date DATE NOT NULL,
-        amount_paid INT NOT NULL,
-        date_paid DATE NOT NULL,
-        overdue INT NOT NULL,
+        first_name VARCHAR(255) NOT NULL,
+        last_name VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        gender VARCHAR(255) NOT NULL
     )
 `;
-  sql(loans_schedule);
+  sql(loans_officer);
 
-}
-const dropTable = () => {
-  const text =
+};
+const createFarmersTable = () => {
+  const farmers =
+    `
+    CREATE TABLE IF NOT EXISTS 
+    farmers(
+        id SERIAL PRIMARY KEY,
+        first_name VARCHAR(255) NOT NULL,
+        last_name VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        gender VARCHAR(255) NOT NULL
+    )
+`;
+  sql(farmers);
+
+};
+const dropLoansTable = () => {
+  const loans =
     `
     DROP TABLE IF EXISTS loans_schedule
     `;
-  pool.query(text)
-    .then((res) => {
-      console.log(res);
-      pool.end();
-    })
-    .catch((err) => {
-      console.log(err);
-      pool.end();
-    });
-}
+  sql(loans);
+};
+const dropFarmersTable = () => {
+  const farmers =
+    `
+    DROP TABLE IF EXISTS farmers
+    `;
+  sql(farmers);
+};
+const dropOfficersTable = () => {
+  const officers =
+    `
+    DROP TABLE IF EXISTS loans_officer
+    `;
+  sql(officers);
+};
+
 pool.on('remove', () => {
   console.log('Client removed');
-  process.exit(0);
-})
+});
+
 module.exports = {
   createLoansTable,
-  dropTable,
+  createLoansOfficerTable,
+  createFarmersTable,
+  dropLoansTable,
+  dropOfficersTable,
+  dropFarmersTable,
   pool
-}
+};
 require('make-runnable');

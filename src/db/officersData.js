@@ -1,0 +1,77 @@
+const records = [{
+  "first_name": "Minerva",
+  "last_name": "Schurcke",
+  "email": "mschurcke0@quantcast.com",
+  "gender": "Female"
+}, {
+  "first_name": "Darrin",
+  "last_name": "Cow",
+  "email": "dcow1@t.co",
+  "gender": "Male"
+}, {
+  "first_name": "Josefina",
+  "last_name": "Rourke",
+  "email": "jrourke2@sogou.com",
+  "gender": "Female"
+}, {
+  "first_name": "Annice",
+  "last_name": "Tilford",
+  "email": "atilford3@ucoz.com",
+  "gender": "Female"
+}, {
+  "first_name": "Mannie",
+  "last_name": "Licas",
+  "email": "mlicas4@arstechnica.com",
+  "gender": "Male"
+}, {
+  "first_name": "Molly",
+  "last_name": "Featherstone",
+  "email": "mfeatherstone5@ibm.com",
+  "gender": "Female"
+}, {
+  "first_name": "Thornie",
+  "last_name": "Goodliffe",
+  "email": "tgoodliffe6@cloudflare.com",
+  "gender": "Male"
+}, {
+  "first_name": "Chancey",
+  "last_name": "Livingstone",
+  "email": "clivingstone7@hugedomains.com",
+  "gender": "Male"
+}, {
+  "first_name": "Brucie",
+  "last_name": "Yearron",
+  "email": "byearron8@noaa.gov",
+  "gender": "Male"
+}, {
+  "first_name": "Ramon",
+  "last_name": "Hughesdon",
+  "email": "rhughesdon9@xrea.com",
+  "gender": "Male"
+}, {
+  "first_name": "Terrye",
+  "last_name": "Bonham",
+  "email": "tbonhama@un.org",
+  "gender": "Female"
+}, {
+  "first_name": "Savina",
+  "last_name": "Goodsell",
+  "email": "sgoodsellb@ucoz.com",
+  "gender": "Female"
+}, {
+  "first_name": "Elonore",
+  "last_name": "Gerardeaux",
+  "email": "egerardeauxc@nymag.com",
+  "gender": "Female"
+}, {
+  "first_name": "Ilysa",
+  "last_name": "Lissenden",
+  "email": "ilissendend@usatoday.com",
+  "gender": "Female"
+}, {
+  "first_name": "Loise",
+  "last_name": "Brangan",
+  "email": "lbrangane@cpanel.net",
+  "gender": "Female"
+}];
+export default records;
